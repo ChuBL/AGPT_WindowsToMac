@@ -1,27 +1,64 @@
-# AGPT
-Apple Game Porting Toolkit Installer
+# Quick Start Guide for Installing Windows Steam Games on macOS
 
-This public repository showcases using the brand-new **InstallAware Multi Platform** to completely automate the installation of Apple's new Game Porting Toolkit, making the process as simple as point-and-click - even for non-developers!
+## About This Repository
+This repository, a fork from [InstallAware's AGPT](https://github.com/installaware/AGPT), simplifies the process of installing Windows apps and games on macOS. It's not affiliated with OpenAI products. Our guide will help you navigate through the installation steps and troubleshooting.
 
-**If you are not a developer and are looking for a free way to run PC apps (and games) on your Mac, you may download a ready-to-run app built from this sample, notarized by Apple, at the URL below:
-www.installaware.com/iamp/agpt.dmg** (14.8 MB)
+## What to Expect
+Run Windows Steam games like Sekiro on Macbook M1 Pro with nearly 60 fps and minimal frame skips.
+
+## Prerequisites
+
+### Hardware
+- A Mac running macOS 14 Sonoma or later.
+
+### Software
+1. **Xcode** (Version 15 or later): [Download Xcode](https://apps.apple.com/us/app/xcode/id497799835)
+2. **AGPT DMG**: [Download AGPT DMG](www.installaware.com/iamp/agpt.dmg) - [Source](https://github.com/installaware/AGPT)
+3. **Apple Game Porting Toolkit DMG**: [Download from Apple](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) (Requires Apple ID) - [Source](https://developer.apple.com/videos/play/wwdc2023/10123/)
+4. **Windows version of Steam**: [Download Steam](https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe) - [Source](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit#:~:text=Steam%20%E2%80%A2-,Link,-Download%20the%20Windows)
+
+## Installation Steps
+1. Install Xcode.
+2. Open AGPT.dmg and move **Game Porting Toolkit Installer.app** to the Applications folder.
+3. Launch **Game Porting Toolkit Installer.app**.
 
 <img width="609" alt="Screenshot 2023-09-24 at 02 06 19" src="https://github.com/installaware/AGPT/assets/24454000/780e4c57-d24f-43a9-885f-a2a6fe5cb5b7">
 
-_This app works even on Intel Macs and does not require that you download the Apple Game Porting Toolkit from an Apple Developer account._
+4. Check requirements in the app window.
+5. Select **Apple Game Porting Toolkit DMG** and **Windows version of Steam EXE** in the first and third fields.
+6. Proceed with the installation wizard for Steam.
+7. Ignore if the first Steam launch attempt fails.
+8. Steam is now installed on your Mac.
 
-However, if you do have an Apple Silicon Mac and an Apple Developer account, this sample will also perform additional setup tasks to accelerate 3D games using Apple's brand-new technology.
+## Creating a Steam Shortcut
+Follow the guide from [AppleGamingWiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit#Shortcut) to create a Steam shortcut using macOS's Automator app. Adjust {path1}, {path2}, and {path3} as per your system's directories.
 
-Please note that you may run any Windows app using this sample, and are not limited to running games only.
 
-If you are a developer, you may customize this sample following the steps below:
+1. **Open Automator**: Locate and open the Automator app on your Mac.
+2. **Create a New Application**: In Automator, choose to create a new application.
+3. **Run Shell Script**: In the actions panel, search for and select the 'Run Shell Script' action.
+4. **Determine Paths**: You need to find three specific paths on your Mac:
 
-1) Please install **InstallAware Multi Platform** _RC0 Update 6a_ or newer from www.installaware.com/iamp/rc0.dmg. If you have previously installed **InstallAware Multi Platform**, just run the built-in update tool to upgrade to this version.
-2) Please double-click the **MPRX project file** in the _Finder_ to open this sample in the **InstallAware Multi Platform** IDE. While your IDE may ship with an older version of this sample, always check the online repository for the latest version.
-3) For human readable copies of the installation scripts, please take a look at https://github.com/installaware/AGPT/blob/main/Game%20Porting%20Toolkit%20Installer.miax.txt, https://github.com/installaware/AGPT/blob/main/sudo.miax.txt, and https://github.com/installaware/AGPT/blob/main/logging.miax.txt. Your IDE renders these scripts with syntax highlighting, code folding, undo/redo, etc.
+   - **Wine Prefix Path (`{path1}`)**: This is the directory for `.wine`, typically found in your user directory. For example, `/Users/[YourUserName]/.wine`.
 
-This sample demonstrates intermediate coding techniques using **InstallAware Multi Platform**.
+   - **Wine Binary Path (`{path2}`)**: Locate the `wine64` binary in the `game-porting-toolkit` directory. For example, `/usr/local/Cellar/game-porting-toolkit/1.1/bin/wine64`. Note that `1.1` is the version number, which may vary.
 
-For more information on **InstallAware Multi Platform**, please visit https://www.installaware.com/installaware-multi-platform.htm.
+   - **Steam Executable Path (`{path3}`)**: The path to your Steam executable, usually `'C:\Program Files (x86)/Steam/steam.exe'`. Remember to include quotes due to spaces in the path.
 
-Please feel free to contact **InstallAware Software** at https://www.installaware.com/contact-us.htm.
+5. **Enter the Script**: In the Automator script box, enter the following code, replacing `{path1}` and `{path2}` with your actual paths:
+
+   ```
+   MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX="{path1}" "{path2}" "{path3}"
+   ```
+
+   Example:
+
+   ```
+   MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX="/Users/John/.wine" "/usr/local/Cellar/game-porting-toolkit/1.1/bin/wine64" "C:\Program Files (x86)/Steam/steam.exe"
+   ```
+
+6. **Save the Application**: Save the Automator application, ideally in the Applications folder for easy access.
+7. **Customize Shortcut (Optional)**: To add a custom icon, select the shortcut, press ⌘ Command+I to get info, and drag a PNG file onto the icon in the top left of the info window.
+
+## Exiting Steam
+Always use the Exit button in the Steam menu to prevent background processes from unintentionally relaunching Steam.
