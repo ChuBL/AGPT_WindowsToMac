@@ -43,7 +43,7 @@ Follow the guide from [AppleGamingWiki](https://www.applegamingwiki.com/wiki/Gam
 
    - **Wine Binary Path (`{path2}`)**: Locate the `wine64` binary in the `game-porting-toolkit` directory. For example, `/usr/local/Cellar/game-porting-toolkit/1.1/bin/wine64`. Note that `1.1` is the version number, which may vary.
 
-   - **Steam Executable Path (`{path3}`)**: The path to your Steam executable, usually `'C:\Program Files (x86)/Steam/steam.exe'`. Remember to include quotes due to spaces in the path.
+   - **Steam Executable Path (`{path3}`)**: The path to your Steam executable, usually `"C:\Program Files (x86)/Steam/steam.exe"`. Remember to include quotes due to spaces in the path.
 
 5. **Enter the Script**: In the Automator script box, enter the following code, replacing `{path1}`, `{path2}`, and `{path3}` with your actual paths:
 
