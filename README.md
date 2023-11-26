@@ -12,7 +12,7 @@ Run Windows Steam games like Sekiro on Macbook M1 Pro with nearly 60 fps and min
 - A Mac running macOS 14 Sonoma or later.
 
 ### Software
-1. **Xcode** (Version 15 or later): [Download Xcode](https://apps.apple.com/us/app/xcode/id497799835)
+1. **Xcode** (Version 15 or later): [Download Xcode　from App Store](https://apps.apple.com/us/app/xcode/id497799835)
 2. **AGPT DMG**: [Download AGPT DMG](www.installaware.com/iamp/agpt.dmg) - [Source](https://github.com/installaware/AGPT)
 3. **Apple Game Porting Toolkit DMG**: [Download from Apple](https://developer.apple.com/download/all/?q=game%20porting%20toolkit) (Requires Apple ID) - [Source](https://developer.apple.com/videos/play/wwdc2023/10123/)
 4. **Windows version of Steam**: [Download Steam](https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe) - [Source](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit#:~:text=Steam%20%E2%80%A2-,Link,-Download%20the%20Windows)
