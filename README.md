@@ -25,7 +25,7 @@ Run Windows Steam games like Sekiro on Macbook M1 Pro with nearly 60 fps and min
 <img width="609" alt="Screenshot 2023-09-24 at 02 06 19" src="https://github.com/installaware/AGPT/assets/24454000/780e4c57-d24f-43a9-885f-a2a6fe5cb5b7">
 
 4. Check requirements in the app window.
-5. Select **Apple Game Porting Toolkit DMG** and **Windows version of Steam EXE** in the first and third fields.
+5. Browse and select **Apple Game Porting Toolkit DMG** and **Windows version of Steam EXE** in the first and third fields.
 6. Proceed with the installation wizard for Steam.
 7. Ignore if the first Steam launch attempt fails.
 8. Steam is now installed on your Mac.
