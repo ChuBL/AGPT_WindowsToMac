@@ -31,7 +31,7 @@ Run Windows Steam games like Sekiro on Macbook M1 Pro with nearly 60 fps and min
 8. Steam is now installed on your Mac.
 
 ## Creating a Steam Shortcut
-Follow the guide from [AppleGamingWiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit#Shortcut) to create a Steam shortcut using macOS's Automator app. Adjust {path1}, {path2}, and {path3} as per your system's directories.
+Follow the guide from [AppleGamingWiki](https://www.applegamingwiki.com/wiki/Game_Porting_Toolkit#Shortcut) to create a Steam shortcut using macOS's Automator app. Adjust `{path1}`, `{path2}`, and `{path3}` as per your system's directories.
 
 
 1. **Open Automator**: Locate and open the Automator app on your Mac.
@@ -45,7 +45,7 @@ Follow the guide from [AppleGamingWiki](https://www.applegamingwiki.com/wiki/Gam
 
    - **Steam Executable Path (`{path3}`)**: The path to your Steam executable, usually `'C:\Program Files (x86)/Steam/steam.exe'`. Remember to include quotes due to spaces in the path.
 
-5. **Enter the Script**: In the Automator script box, enter the following code, replacing `{path1}` and `{path2}` with your actual paths:
+5. **Enter the Script**: In the Automator script box, enter the following code, replacing `{path1}`, `{path2}`, and `{path3}` with your actual paths:
 
    ```
    MTL_HUD_ENABLED=0 WINEESYNC=1 WINEPREFIX="{path1}" "{path2}" "{path3}"
